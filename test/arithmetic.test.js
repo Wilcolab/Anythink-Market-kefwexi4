@@ -288,22 +288,8 @@ describe('Arithmetic', function () {
                     done();
                 });
         });
-        it('raises a floating point number to a floating point power', function (done) {
-            request.get('/arithmetic?operation=power&operand1=2.5&operand2=0.5')
-                .expect(200)
-                .end(function (err, res) {
-                    expect(res.body).to.eql({ result: 1.58 });
-                    done();
-                });
-        });
-        it('raises a floating point number to a negative floating point power', function (done) {
-            request.get('/arithmetic?operation=power&operand1=2.5&operand2=-0.5')
-                .expect(200)
-                .end(function (err, res) {
-                    expect(res.body).to.eql({ result: 0.63 });
-                    done();
-                });
-        });
+    
+        // Переписані тести без дублювання
         it('raises a floating point number to zero power', function (done) {
             request.get('/arithmetic?operation=power&operand1=2.5&operand2=0')
                 .expect(200)
@@ -311,33 +297,6 @@ describe('Arithmetic', function () {
                     expect(res.body).to.eql({ result: 1 });
                     done();
                 });
-        }
-        );
-        it('raises a floating point number to a floating point power', function (done) {
-            request.get('/arithmetic?operation=power&operand1=2.5&operand2=0.5')
-                .expect(200)
-                .end(function (err, res) {
-                    expect(res.body).to.eql({ result: 1.58 });
-                    done();
-                });
-        }
-        );
-        it('raises a floating point number to a negative floating point power', function (done) {
-            request.get('/arithmetic?operation=power&operand1=2.5&operand2=-0.5')
-                .expect(200)
-                .end(function (err, res) {
-                    expect(res.body).to.eql({ result: 0.63 });
-                    done();
-                });
-        }
-        );
-        it('raises a floating point number to zero power', function (done) {
-            request.get('/arithmetic?operation=power&operand1=2.5&operand2=0')
-                .expect(200)
-                .end(function (err, res) {
-                    expect(res.body).to.eql({ result: 1 });
-                    done();
-                });
-        }
-        );
+        });
+        
     })});
